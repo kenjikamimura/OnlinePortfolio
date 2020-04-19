@@ -1,7 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
-import { FaBeer } from "react-icons/fa"
+import {
+  TiHomeOutline,
+  TiCameraOutline,
+  TiMortarBoard,
+  TiCoffee,
+} from "react-icons/ti"
 import NavbarItem from "./NavbarItem"
 import logo from "../images/logo-black.png"
 import "./layout.css"
@@ -9,7 +14,7 @@ import "./layout.css"
 const styles = {
   container: {
     display: "grid",
-    gridTemplateColumns: "250px auto",
+    gridTemplateColumns: "280px auto",
     gridTemplateRows: "100%",
     minHeight: "100vh",
   },
@@ -26,7 +31,16 @@ const styles = {
   },
   logo: {
     width: "40px",
-    margin: "0.5rem",
+    marginTop: "0.5rem",
+    marginBottom: "0.5rem",
+    marginLeft: "0.5rem",
+    marginRight: "1.6rem",
+  },
+  navbarIcons: {
+    height: "1.5rem",
+    width: "1.5rem",
+    marginLeft: "0.2rem",
+    marginRight: "0.8rem",
   },
 }
 
@@ -37,8 +51,9 @@ const Layout = ({ children }) => {
         <Link
           style={{
             display: "flex",
+            justifyContent: "center",
             alignItems: "center",
-            margin: "0.5rem",
+            margin: "0.9rem",
             textDecoration: "none",
           }}
         >
@@ -57,15 +72,21 @@ const Layout = ({ children }) => {
             <span>Kamimura</span>
           </div>
         </Link>
-        <ul style={{ margin: 0 }}>
-          <NavbarItem redirectUrl="/">Home</NavbarItem>
+        <ul style={{ marginTop: "0rem", marginLeft: "0" }}>
+          <NavbarItem redirectUrl="/">
+            <TiHomeOutline style={styles.navbarIcons} />
+            Home
+          </NavbarItem>
           <NavbarItem redirectUrl="/personal-projects">
+            <TiCoffee style={styles.navbarIcons} />
             Personal Projects
           </NavbarItem>
           <NavbarItem redirectUrl="/university-projects">
+            <TiMortarBoard style={styles.navbarIcons} />
             University Projects
           </NavbarItem>
           <NavbarItem redirectUrl="/drone-cinematography">
+            <TiCameraOutline style={styles.navbarIcons} />
             Drone Cinematography
           </NavbarItem>
         </ul>

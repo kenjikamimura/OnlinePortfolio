@@ -9,7 +9,9 @@ const NavbarItem = ({ children, redirectUrl }) => {
         <Link
           to={redirectUrl}
           style={{
-            display: "inline-block",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-start",
             textDecoration: "none",
             width: "100%",
             padding: "0.5rem 0.5rem",
