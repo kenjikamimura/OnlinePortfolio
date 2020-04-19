@@ -4,4 +4,4 @@
 - Hosted on Surge
 - CICD using github actions
 
-See https://online-portfolio.kenjikamimura.website/ for published website.
+See http://kenji-kamimura-online-portfolio.s3-website-ap-southeast-2.amazonaws.com/ for published website.
