@@ -1,8 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql, Link } from "gatsby"
-
-import Header from "./header"
+import { Link } from "gatsby"
+import logo from "../images/logo-black.png"
 import "./layout.css"
 
 const styles = {
@@ -13,7 +12,6 @@ const styles = {
     minHeight: "100vh",
   },
   navbar: {
-    maxWidth: `300px`,
     background: "white",
     display: "flex",
     flexDirection: "column",
@@ -30,17 +28,14 @@ const styles = {
   },
 }
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+const pages = [
+  { name: "Home", url: "/" },
+  { name: "Personal Projects", url: "/personal-projects" },
+  { name: "University Projects", url: "/university-projects" },
+  { name: "Drone Cinematography", url: "/drone-cinematography" },
+]
 
+const Layout = ({ children }) => {
   return (
     <div style={styles.container}>
       <nav style={styles.navbar}>
@@ -61,16 +56,31 @@ const Layout = ({ children }) => {
             <span>Kamimura</span>
           </div>
         </div>
-          </li>
-          <li>
-            <Link to="/personal-projects">Personal Projects</Link>
-          </li>
-          <li>
-            <Link to="/university-projects">Universtiy Projects</Link>
-          </li>
-          <li>
-            <Link to="/drone-cinematography">Drone Cinematography</Link>
-          </li>
+        <ul style={{ margin: 0 }}>
+          {pages.map(page => {
+            return (
+              <li style={{ listStyle: "none" }}>
+                <div style={{ padding: "0 0.4rem" }}>
+                  <Link
+                    to={page.url}
+                    style={{
+                      display: "inline-block",
+                      textDecoration: "none",
+                      width: "100%",
+                      padding: "0.5rem 0.5rem",
+                      borderRadius: "6px",
+                      color: "black",
+                    }}
+                    activeStyle={{
+                      background: "rgba(61, 61, 61, 0.1)",
+                    }}
+                  >
+                    {page.name}
+                  </Link>
+                </div>
+              </li>
+            )
+          })}
         </ul>
       </nav>
       <div style={styles.main}>
