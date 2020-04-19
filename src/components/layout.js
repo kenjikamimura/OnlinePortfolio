@@ -1,6 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import { FaBeer } from "react-icons/fa"
+import NavbarItem from "./NavbarItem"
 import logo from "../images/logo-black.png"
 import "./layout.css"
 
@@ -27,13 +29,6 @@ const styles = {
     margin: "0.5rem",
   },
 }
-
-const pages = [
-  { name: "Home", url: "/" },
-  { name: "Personal Projects", url: "/personal-projects" },
-  { name: "University Projects", url: "/university-projects" },
-  { name: "Drone Cinematography", url: "/drone-cinematography" },
-]
 
 const Layout = ({ children }) => {
   return (
@@ -63,30 +58,16 @@ const Layout = ({ children }) => {
           </div>
         </Link>
         <ul style={{ margin: 0 }}>
-          {pages.map(page => {
-            return (
-              <li style={{ listStyle: "none" }}>
-                <div style={{ padding: "0 0.4rem" }}>
-                  <Link
-                    to={page.url}
-                    style={{
-                      display: "inline-block",
-                      textDecoration: "none",
-                      width: "100%",
-                      padding: "0.5rem 0.5rem",
-                      borderRadius: "6px",
-                      color: "black",
-                    }}
-                    activeStyle={{
-                      background: "rgba(61, 61, 61, 0.1)",
-                    }}
-                  >
-                    {page.name}
-                  </Link>
-                </div>
-              </li>
-            )
-          })}
+          <NavbarItem redirectUrl="/">Home</NavbarItem>
+          <NavbarItem redirectUrl="/personal-projects">
+            Personal Projects
+          </NavbarItem>
+          <NavbarItem redirectUrl="/university-projects">
+            University Projects
+          </NavbarItem>
+          <NavbarItem redirectUrl="/drone-cinematography">
+            Drone Cinematography
+          </NavbarItem>
         </ul>
       </nav>
       <div style={styles.main}>
