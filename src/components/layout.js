@@ -39,8 +39,13 @@ const Layout = ({ children }) => {
   return (
     <div style={styles.container}>
       <nav style={styles.navbar}>
-        <div
-          style={{ display: "flex", alignItems: "center", margin: "0.5rem" }}
+        <Link
+          style={{
+            display: "flex",
+            alignItems: "center",
+            margin: "0.5rem",
+            textDecoration: "none",
+          }}
         >
           <img src={logo} alt="Logo" style={styles.logo} />
           <div
@@ -50,12 +55,13 @@ const Layout = ({ children }) => {
               fontWeight: "bold",
               fontSize: "1.5rem",
               textTransform: "uppercase",
+              color: "black",
             }}
           >
             <span>Kenji</span>
             <span>Kamimura</span>
           </div>
-        </div>
+        </Link>
         <ul style={{ margin: 0 }}>
           {pages.map(page => {
             return (
