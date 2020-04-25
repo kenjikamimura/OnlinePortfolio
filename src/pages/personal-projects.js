@@ -7,27 +7,31 @@ import SEO from "../components/seo"
 const PersonalProjects = () => {
   const data = useStaticQuery(graphql`
     {
-      photo: file(
-        relativePath: { eq: "personal-projects/box-puzzle/Box Puzzle.jpg" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 512) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      photo2: file(
-        relativePath: { eq: "personal-projects/box-puzzle/Box Puzzle open.jpg" }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 512) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      photo3: file(
+      outside: file(
         relativePath: {
-          eq: "personal-projects/box-puzzle/Box Puzzle Inside.jpg"
+          eq: "personalProjects/capacitiveTouchBoxPuzzle/outside.jpg"
+        }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 512) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      open: file(
+        relativePath: {
+          eq: "personalProjects/capacitiveTouchBoxPuzzle/open.jpg"
+        }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 512) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      inside: file(
+        relativePath: {
+          eq: "personalProjects/capacitiveTouchBoxPuzzle/inside.jpg"
         }
       ) {
         childImageSharp {
@@ -44,13 +48,13 @@ const PersonalProjects = () => {
       <SEO title="Personal Projets" />
       <h1>Personal Projects</h1>
       <div style={{ width: "200px" }}>
-        <GatsbyImage {...data.photo.childImageSharp} />
+        <GatsbyImage {...data.outside.childImageSharp} />
       </div>
       <div style={{ width: "200px" }}>
-        <GatsbyImage {...data.photo2.childImageSharp} />
+        <GatsbyImage {...data.open.childImageSharp} />
       </div>
       <div style={{ width: "200px" }}>
-        <GatsbyImage {...data.photo3.childImageSharp} />
+        <GatsbyImage {...data.inside.childImageSharp} />
       </div>
       <p>Welcome to page 2</p>
       <Link to="/">Go back to the homepage</Link>
