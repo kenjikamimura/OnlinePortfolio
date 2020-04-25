@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import GatsbyImage from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -40,8 +40,13 @@ const PersonalProjects = () => {
           }
         }
       }
+      markdownRemark(frontmatter: { id: { eq: "capacitiveTouchBoxPuzzle" } }) {
+        html
+      }
     }
   `)
+
+  console.log(data)
 
   return (
     <Layout>
@@ -56,8 +61,10 @@ const PersonalProjects = () => {
       <div style={{ width: "200px" }}>
         <GatsbyImage {...data.inside.childImageSharp} />
       </div>
-      <p>Welcome to page 2</p>
-      <Link to="/">Go back to the homepage</Link>
+      <div
+        className="blog-post-content"
+        dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+      />
     </Layout>
   )
 }
