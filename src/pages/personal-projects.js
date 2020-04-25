@@ -9,51 +9,17 @@ import WoodenTimeCapsule from "../sections/WoodenTimeCapsule"
 const PersonalProjects = () => {
   const data = useStaticQuery(graphql`
     {
-      outside: file(
-        relativePath: {
-          eq: "personalProjects/capacitiveTouchBoxPuzzle/outside.jpg"
-        }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 512) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      open: file(
-        relativePath: {
-          eq: "personalProjects/capacitiveTouchBoxPuzzle/open.jpg"
-        }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 512) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      inside: file(
-        relativePath: {
-          eq: "personalProjects/capacitiveTouchBoxPuzzle/inside.jpg"
-        }
-      ) {
-        childImageSharp {
-          fluid(maxWidth: 512) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      markdownRemark(frontmatter: { id: { eq: "capacitiveTouchBoxPuzzle" } }) {
+      markdownRemark(frontmatter: { id: { eq: "personalProjects" } }) {
         html
       }
     }
   `)
 
-  console.log(data)
-
   return (
     <Layout>
       <SEO title="Personal Projets" />
       <h1>Personal Projects</h1>
+      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       <CapacitiveTouchBoxPuzzle />
       <WoodenTimeCapsule />
     </Layout>
