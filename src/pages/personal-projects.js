@@ -4,6 +4,7 @@ import GatsbyImage from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import CapacitiveTouchBoxPuzzle from "../sections/capacitiveTouchBoxPuzzle"
+import WoodenTimeCapsule from "../sections/WoodenTimeCapsule"
 
 const PersonalProjects = () => {
   const data = useStaticQuery(graphql`
@@ -54,6 +55,7 @@ const PersonalProjects = () => {
       <SEO title="Personal Projets" />
       <h1>Personal Projects</h1>
       <CapacitiveTouchBoxPuzzle />
+      <WoodenTimeCapsule />
     </Layout>
   )
 }
