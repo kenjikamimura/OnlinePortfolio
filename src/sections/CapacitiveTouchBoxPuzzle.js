@@ -1,11 +1,8 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import GatsbyImage from "gatsby-image"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import CapacitiveTouchBoxPuzzle from "../sections/capacitiveTouchBoxPuzzle"
 
-const PersonalProjects = () => {
+const CapacitiveTouchBoxPuzzle = () => {
   const data = useStaticQuery(graphql`
     {
       outside: file(
@@ -47,15 +44,21 @@ const PersonalProjects = () => {
     }
   `)
 
-  console.log(data)
-
   return (
-    <Layout>
-      <SEO title="Personal Projets" />
-      <h1>Personal Projects</h1>
-      <CapacitiveTouchBoxPuzzle />
-    </Layout>
+    <>
+      <h1>Capacitive Touch Box Puzzle</h1>
+      <div style={{ width: "200px" }}>
+        <GatsbyImage {...data.outside.childImageSharp} />
+      </div>
+      <div style={{ width: "200px" }}>
+        <GatsbyImage {...data.open.childImageSharp} />
+      </div>
+      <div style={{ width: "200px" }}>
+        <GatsbyImage {...data.inside.childImageSharp} />
+      </div>
+      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+    </>
   )
 }
 
-export default PersonalProjects
+export default CapacitiveTouchBoxPuzzle
