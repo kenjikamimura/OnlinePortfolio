@@ -23,7 +23,7 @@ const Layout = ({ children }) => (
   >
     <nav className="border-r border-solid border-gray-400 ">
       <Link className="m-4 flex justify-center items-center">
-        <img src={logo} alt="Logo" className="w-10 my-2 mr-6 ml-3" />
+        <img src={logo} alt="Logo" className="w-10 my-2 mr-3 " />
         <div className="text-2xl font-bold uppercase flex flex-col justify-between">
           <span className="-mb-2">Kenji</span>
           <span className="-mt-2">Kamimura</span>

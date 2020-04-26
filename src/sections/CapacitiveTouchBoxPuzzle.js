@@ -45,19 +45,23 @@ const CapacitiveTouchBoxPuzzle = () => {
   `)
 
   return (
-    <>
-      <h1>Capacitive Touch Box Puzzle</h1>
-      <div style={{ width: "200px" }}>
-        <GatsbyImage {...data.outside.childImageSharp} />
+    <div className="w-9/12 m-auto">
+      <h1 className="text-4xl my-4 font-bold">Capacitive Touch Box Puzzle</h1>
+      <div className="flex justify-start">
+        <div
+          className="text-justify w-6/12"
+          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+        />
+        <div className="mx-8">
+          <GatsbyImage
+            className="w-64 mr-8"
+            {...data.outside.childImageSharp}
+          />
+          <GatsbyImage className="w-64 mr-8" {...data.open.childImageSharp} />
+          <GatsbyImage className="w-64 mr-8" {...data.inside.childImageSharp} />
+        </div>
       </div>
-      <div style={{ width: "200px" }}>
-        <GatsbyImage {...data.open.childImageSharp} />
-      </div>
-      <div style={{ width: "200px" }}>
-        <GatsbyImage {...data.inside.childImageSharp} />
-      </div>
-      <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-    </>
+    </div>
   )
 }
 
