@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import GatsbyImage from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import CapacitiveTouchBoxPuzzle from "../sections/capacitiveTouchBoxPuzzle"
 import WoodenTimeCapsule from "../sections/WoodenTimeCapsule"
+import WoodenKunai from "../sections/WoodenKunai"
 
 const PersonalProjects = () => {
   const data = useStaticQuery(graphql`
@@ -22,6 +22,7 @@ const PersonalProjects = () => {
       <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
       <CapacitiveTouchBoxPuzzle />
       <WoodenTimeCapsule />
+      <WoodenKunai />
     </Layout>
   )
 }
