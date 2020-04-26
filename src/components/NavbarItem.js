@@ -8,19 +8,8 @@ const NavbarItem = ({ children, redirectUrl }) => {
       <div style={{ padding: "0 0.4rem" }}>
         <Link
           to={redirectUrl}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-start",
-            textDecoration: "none",
-            width: "100%",
-            padding: "0.5rem 0.5rem",
-            borderRadius: "6px",
-            color: "black",
-          }}
-          activeStyle={{
-            background: "rgba(61, 61, 61, 0.1)",
-          }}
+          className="p-2 rounded-md flex "
+          activeClassName="bg-gray-200"
         >
           {children}
         </Link>
