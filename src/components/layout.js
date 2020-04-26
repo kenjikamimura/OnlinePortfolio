@@ -48,7 +48,7 @@ const Layout = ({ children }) => (
         </NavbarItem>
       </ul>
     </nav>
-    <div className="p-4">
+    <div>
       <main>{children}</main>
     </div>
   </div>
