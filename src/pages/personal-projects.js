@@ -28,15 +28,20 @@ const PersonalProjects = () => {
   return (
     <Layout>
       <SEO title="Personal Projets" />
-      <div className="relative h-64 bg-gray-400 overflow-hidden">
-        <div className="bg-yellow-200">
+      <div
+        className="relative  bg-gray-400 overflow-hidden"
+        style={{ height: "20rem" }}
+      >
+        <div className="bg-yellow-200 ">
           <GatsbyImage
-            className="w-full sm:-my-16 md:-my-32 xl:-my-40 opacity-25"
+            className="w-full opacity-25 -mb-7/12"
             {...data.main.childImageSharp}
           />
         </div>
-        <div className="w-5/12 bg-black text-white p-6 opacity-75 absolute bottom-0 h-64 ml-40">
-          <h1 className="text-5xl font-black uppercase">Personal Projects</h1>
+        <div className="w-5/12 bg-black text-white p-6 opacity-75 absolute bottom-0 ml-40">
+          <h1 className="sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black uppercase">
+            Personal Projects
+          </h1>
           <div
             className="py-3"
             dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}

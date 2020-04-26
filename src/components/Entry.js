@@ -3,7 +3,7 @@ import GatsbyImage from "gatsby-image"
 
 const Entry = ({ title, body, images }) => {
   return (
-    <div className="w-9/12 m-auto">
+    <div className="w-9/12 mx-40">
       <h1 className="text-4xl my-4 font-bold">{title}</h1>
       <div className="flex justify-start">
         <div
