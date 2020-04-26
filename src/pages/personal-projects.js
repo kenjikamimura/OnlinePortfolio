@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import CapacitiveTouchBoxPuzzle from "../sections/capacitiveTouchBoxPuzzle"
 import WoodenTimeCapsule from "../sections/WoodenTimeCapsule"
 import WoodenKunai from "../sections/WoodenKunai"
+import GearBoxPuzzle from "../sections/GearBoxPuzzle"
 
 const PersonalProjects = () => {
   const data = useStaticQuery(graphql`
@@ -23,6 +24,7 @@ const PersonalProjects = () => {
       <CapacitiveTouchBoxPuzzle />
       <WoodenTimeCapsule />
       <WoodenKunai />
+      <GearBoxPuzzle />
     </Layout>
   )
 }
