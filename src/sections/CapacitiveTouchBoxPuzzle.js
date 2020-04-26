@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import GatsbyImage from "gatsby-image"
+import Entry from "../components/Entry"
 
 const CapacitiveTouchBoxPuzzle = () => {
   const data = useStaticQuery(graphql`
@@ -45,23 +45,15 @@ const CapacitiveTouchBoxPuzzle = () => {
   `)
 
   return (
-    <div className="w-9/12 m-auto">
-      <h1 className="text-4xl my-4 font-bold">Capacitive Touch Box Puzzle</h1>
-      <div className="flex justify-start">
-        <div
-          className="text-justify w-6/12"
-          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-        />
-        <div className="mx-8">
-          <GatsbyImage
-            className="w-64 mr-8"
-            {...data.outside.childImageSharp}
-          />
-          <GatsbyImage className="w-64 mr-8" {...data.open.childImageSharp} />
-          <GatsbyImage className="w-64 mr-8" {...data.inside.childImageSharp} />
-        </div>
-      </div>
-    </div>
+    <Entry
+      title="Capacitive Touch Box Puzzle"
+      body={data.markdownRemark.html}
+      images={[
+        data.outside.childImageSharp,
+        data.open.childImageSharp,
+        data.inside.childImageSharp,
+      ]}
+    />
   )
 }
 
