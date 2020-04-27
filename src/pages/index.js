@@ -1,14 +1,14 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
+import Navbar from "../components/Navbar"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
 import "../css/tailwind.scss"
 
 const IndexPage = () => (
-  <Layout>
+  <Navbar>
     <SEO title="Home" />
     <h1>Personal Portfolio</h1>
     <p>Welcome to my online portfolio</p>
@@ -45,7 +45,7 @@ const IndexPage = () => (
       <Image />
     </div>
     <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
+  </Navbar>
 )
 
 export default IndexPage

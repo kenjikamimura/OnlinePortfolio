@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import Layout from "../components/layout"
+import Navbar from "../components/Navbar"
 import SEO from "../components/seo"
 import GatsbyImage from "gatsby-image"
 import CapacitiveTouchBoxPuzzle from "../sections/CapacitiveTouchBoxPuzzle"
@@ -26,7 +26,7 @@ const PersonalProjects = () => {
   `)
 
   return (
-    <Layout>
+    <Navbar>
       <SEO title="Personal Projets" />
       <div
         className="relative  bg-gray-400 overflow-hidden"
@@ -54,7 +54,7 @@ const PersonalProjects = () => {
       <WoodenKunai />
       <GearBoxPuzzle />
       <CentripetalLockingPuzzle />
-    </Layout>
+    </Navbar>
   )
 }
 

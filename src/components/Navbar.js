@@ -13,7 +13,7 @@ import "./layout.css"
 
 const navbarIconStyles = "ml-1 mr-3 w-6 h-6"
 
-const Layout = ({ children }) => (
+const Navbar = ({ children }) => (
   <div
     className="grid grid-rows-1"
     style={{
@@ -22,7 +22,7 @@ const Layout = ({ children }) => (
     }}
   >
     <nav className="border-r border-solid border-gray-400 ">
-      <Link className="m-4 flex justify-center items-center">
+      <Link className="m-4 flex justify-center items-center" to="/">
         <img src={logo} alt="Logo" className="w-10 my-2 mr-3 " />
         <div className="text-2xl font-bold uppercase flex flex-col justify-between">
           <span className="-mb-2">Kenji</span>
@@ -54,8 +54,8 @@ const Layout = ({ children }) => (
   </div>
 )
 
-Layout.propTypes = {
+Navbar.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default Navbar
