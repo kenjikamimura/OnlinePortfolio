@@ -44,9 +44,10 @@ const WoodenKunai = () => {
       body={data.markdownRemark.html}
       images={[
         data.main.childImageSharp,
-        data.front.childImageSharp,
         data.back.childImageSharp,
+        data.front.childImageSharp,
       ]}
+      imageLayout="3-way-grid"
     />
   )
 }

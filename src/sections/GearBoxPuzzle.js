@@ -47,6 +47,7 @@ const GearBoxPuzzle = () => {
         data.closed.childImageSharp,
         data.side.childImageSharp,
       ]}
+      imageLayout="3-way-grid"
     />
   )
 }
