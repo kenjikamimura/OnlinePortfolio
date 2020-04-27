@@ -6,7 +6,11 @@ import Column from "../components/Column"
 import VideoEntry from "../components/VideoEntry"
 
 const DroneCinematography = () => {
-  const data = useStaticQuery(graphql`
+  const {
+    droneCinematography,
+    wainamuLuxuryTents,
+    mercerBayLoopWalk,
+  } = useStaticQuery(graphql`
     {
       droneCinematography: markdownRemark(
         frontmatter: { id: { eq: "droneCinematography" } }
@@ -25,26 +29,39 @@ const DroneCinematography = () => {
           videoSource
         }
       }
+      mercerBayLoopWalk: markdownRemark(
+        frontmatter: { id: { eq: "mercerBayLoopWalk" } }
+      ) {
+        html
+        frontmatter {
+          title
+          videoSource
+        }
+      }
     }
   `)
 
   return (
     <Navbar>
-      <SEO title={data.droneCinematography.frontmatter.title} />
-      <h1>{data.droneCinematography.frontmatter.title}</h1>
+      <SEO title={droneCinematography.frontmatter.title} />
+      <h1>{droneCinematography.frontmatter.title}</h1>
       <div
         className="text-justify w-11/12 mr-1"
         dangerouslySetInnerHTML={{
-          __html: data.droneCinematography.html,
+          __html: droneCinematography.html,
         }}
       />
       <Column>
         <VideoEntry
-          title={data.wainamuLuxuryTents.frontmatter.title}
-          body={data.wainamuLuxuryTents.html}
-          videoSource={data.wainamuLuxuryTents.frontmatter.videoSource}
+          title={wainamuLuxuryTents.frontmatter.title}
+          body={wainamuLuxuryTents.html}
+          videoSource={wainamuLuxuryTents.frontmatter.videoSource}
         />
-        <VideoEntry />
+        <VideoEntry
+          title={mercerBayLoopWalk.frontmatter.title}
+          body={mercerBayLoopWalk.html}
+          videoSource={mercerBayLoopWalk.frontmatter.videoSource}
+        />
       </Column>
     </Navbar>
   )
