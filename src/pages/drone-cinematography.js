@@ -11,6 +11,7 @@ const DroneCinematography = () => {
     wainamuLuxuryTents,
     mercerBayLoopWalk,
     teAraiPoint,
+    mtFuji,
   } = useStaticQuery(graphql`
     {
       droneCinematography: markdownRemark(
@@ -46,6 +47,13 @@ const DroneCinematography = () => {
           videoSource
         }
       }
+      mtFuji: markdownRemark(frontmatter: { id: { eq: "mtFuji" } }) {
+        html
+        frontmatter {
+          title
+          videoSource
+        }
+      }
     }
   `)
 
@@ -74,6 +82,11 @@ const DroneCinematography = () => {
           title={teAraiPoint.frontmatter.title}
           body={teAraiPoint.html}
           videoSource={teAraiPoint.frontmatter.videoSource}
+        />
+        <VideoEntry
+          title={mtFuji.frontmatter.title}
+          body={mtFuji.html}
+          videoSource={mtFuji.frontmatter.videoSource}
         />
       </Column>
     </Navbar>
