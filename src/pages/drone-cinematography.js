@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
+import GatsbyImage from "gatsby-image"
 import Navbar from "../components/Navbar"
 import SEO from "../components/seo"
 import Column from "../components/Column"
@@ -7,6 +8,7 @@ import VideoEntry from "../components/VideoEntry"
 
 const DroneCinematography = () => {
   const {
+    droneImage,
     droneCinematography,
     wainamuLuxuryTents,
     mercerBayLoopWalk,
@@ -14,6 +16,13 @@ const DroneCinematography = () => {
     mtFuji,
   } = useStaticQuery(graphql`
     {
+      droneImage: file(relativePath: { eq: "drone-te-arai.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 512) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
       droneCinematography: markdownRemark(
         frontmatter: { id: { eq: "droneCinematography" } }
       ) {
@@ -61,6 +70,7 @@ const DroneCinematography = () => {
     <Navbar>
       <SEO title={droneCinematography.frontmatter.title} />
       <h1>{droneCinematography.frontmatter.title}</h1>
+      <GatsbyImage className="w-64 mr-8 my-3" {...droneImage.childImageSharp} />
       <div
         className="text-justify w-11/12 mr-1"
         dangerouslySetInnerHTML={{
