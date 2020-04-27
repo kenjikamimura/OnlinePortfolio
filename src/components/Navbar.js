@@ -9,7 +9,7 @@ import {
 } from "react-icons/ti"
 import NavbarItem from "./NavbarItem"
 import logo from "../images/logo-black.png"
-import "./layout.css"
+import "./reset.css"
 
 const navbarIconStyles = "ml-1 mr-3 w-6 h-6"
 
