@@ -4,15 +4,24 @@ import GatsbyImage from "gatsby-image"
 const Entry = ({ title, body, images }) => {
   return (
     <div className="w-9/12 mx-40">
-      <h1 className="text-4xl my-4 font-bold">{title}</h1>
       <div className="flex justify-start">
-        <div
-          className="text-justify w-6/12"
-          dangerouslySetInnerHTML={{ __html: body }}
-        />
-        <div className="mx-8">
-          {images.map(imageData => {
-            return <GatsbyImage className="w-64 mr-8" {...imageData} />
+        <div>
+          <h1 className="text-4xl my-4 font-bold">{title}</h1>
+          <div
+            className="text-justify w-11/12 mr-1"
+            dangerouslySetInnerHTML={{ __html: body }}
+          />
+        </div>
+
+        <div className="ml-3 mr-24">
+          {images.map((imageData, key) => {
+            return (
+              <GatsbyImage
+                key={key}
+                className="w-64 mr-8 my-3"
+                {...imageData}
+              />
+            )
           })}
         </div>
       </div>
