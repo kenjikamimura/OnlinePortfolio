@@ -10,6 +10,7 @@ const DroneCinematography = () => {
     droneCinematography,
     wainamuLuxuryTents,
     mercerBayLoopWalk,
+    teAraiPoint,
   } = useStaticQuery(graphql`
     {
       droneCinematography: markdownRemark(
@@ -32,6 +33,13 @@ const DroneCinematography = () => {
       mercerBayLoopWalk: markdownRemark(
         frontmatter: { id: { eq: "mercerBayLoopWalk" } }
       ) {
+        html
+        frontmatter {
+          title
+          videoSource
+        }
+      }
+      teAraiPoint: markdownRemark(frontmatter: { id: { eq: "teAraiPoint" } }) {
         html
         frontmatter {
           title
@@ -61,6 +69,11 @@ const DroneCinematography = () => {
           title={mercerBayLoopWalk.frontmatter.title}
           body={mercerBayLoopWalk.html}
           videoSource={mercerBayLoopWalk.frontmatter.videoSource}
+        />
+        <VideoEntry
+          title={teAraiPoint.frontmatter.title}
+          body={teAraiPoint.html}
+          videoSource={teAraiPoint.frontmatter.videoSource}
         />
       </Column>
     </Navbar>
