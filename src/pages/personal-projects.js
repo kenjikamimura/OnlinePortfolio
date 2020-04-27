@@ -8,6 +8,7 @@ import WoodenTimeCapsule from "../sections/WoodenTimeCapsule"
 import WoodenKunai from "../sections/WoodenKunai"
 import GearBoxPuzzle from "../sections/GearBoxPuzzle"
 import CentripetalLockingPuzzle from "../sections/CentripetalLockingPuzzle"
+import Column from "../components/Column"
 
 const PersonalProjects = () => {
   const data = useStaticQuery(graphql`
@@ -49,11 +50,13 @@ const PersonalProjects = () => {
         </div>
       </div>
 
-      <CapacitiveTouchBoxPuzzle />
-      <WoodenTimeCapsule />
-      <WoodenKunai />
-      <GearBoxPuzzle />
-      <CentripetalLockingPuzzle />
+      <Column>
+        <CapacitiveTouchBoxPuzzle />
+        <WoodenTimeCapsule />
+        <WoodenKunai />
+        <GearBoxPuzzle />
+        <CentripetalLockingPuzzle />
+      </Column>
     </Navbar>
   )
 }
