@@ -3,3 +3,15 @@
 @import "tailwindcss/components";
 
 @import "tailwindcss/utilities";
+
+body {
+  font-family: Roboto, sans-serif, georgia, serif;
+}
+
+h1 {
+  font-family: sans-serif, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif;
+}
+p {
+  font-size: 15px;
+}
