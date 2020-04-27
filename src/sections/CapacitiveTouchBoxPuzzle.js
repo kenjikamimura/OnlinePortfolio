@@ -40,13 +40,16 @@ const CapacitiveTouchBoxPuzzle = () => {
       }
       markdownRemark(frontmatter: { id: { eq: "capacitiveTouchBoxPuzzle" } }) {
         html
+        frontmatter {
+          title
+        }
       }
     }
   `)
 
   return (
     <Entry
-      title="Capacitive Touch Box Puzzle"
+      title={data.markdownRemark.frontmatter.title}
       body={data.markdownRemark.html}
       images={[
         data.outside.childImageSharp,

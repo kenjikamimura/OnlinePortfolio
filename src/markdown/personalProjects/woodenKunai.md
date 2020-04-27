@@ -1,5 +1,6 @@
 ---
 id: "woodenKunai"
+title: "Wooden Kunai"
 ---
 
 This was an attempt to recreate a Japanese Kunai inspired from the anime Naruto.

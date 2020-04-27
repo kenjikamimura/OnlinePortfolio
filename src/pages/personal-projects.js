@@ -22,13 +22,16 @@ const PersonalProjects = () => {
       }
       markdownRemark(frontmatter: { id: { eq: "personalProjects" } }) {
         html
+        frontmatter {
+          title
+        }
       }
     }
   `)
 
   return (
     <Navbar>
-      <SEO title="Personal Projets" />
+      <SEO title={data.markdownRemark.frontmatter.title} />
       <div
         className="relative  bg-gray-400 overflow-hidden"
         style={{ height: "20rem" }}
@@ -41,7 +44,7 @@ const PersonalProjects = () => {
         </div>
         <div className="w-5/12 bg-black text-white p-6 opacity-75 absolute bottom-0 ml-40">
           <h1 className="sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black uppercase">
-            Personal Projects
+            {data.markdownRemark.frontmatter.title}
           </h1>
           <div
             className="py-3"

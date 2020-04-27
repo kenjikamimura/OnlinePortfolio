@@ -29,13 +29,16 @@ const CentripetalLockingPuzzle = () => {
       }
       markdownRemark(frontmatter: { id: { eq: "centripetalLockingPuzzle" } }) {
         html
+        frontmatter {
+          title
+        }
       }
     }
   `)
 
   return (
     <Entry
-      title="Centripetal Locking Puzzle"
+      title={data.markdownRemark.frontmatter.title}
       body={data.markdownRemark.html}
       images={[data.open.childImageSharp, data.closed.childImageSharp]}
     />

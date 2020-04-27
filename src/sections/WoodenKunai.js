@@ -34,13 +34,16 @@ const WoodenKunai = () => {
       }
       markdownRemark(frontmatter: { id: { eq: "woodenKunai" } }) {
         html
+        frontmatter {
+          title
+        }
       }
     }
   `)
 
   return (
     <Entry
-      title="Wooden Kunai"
+      title={data.markdownRemark.frontmatter.title}
       body={data.markdownRemark.html}
       images={[
         data.main.childImageSharp,

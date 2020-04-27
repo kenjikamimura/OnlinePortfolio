@@ -1,5 +1,6 @@
 ---
 id: "capacitiveTouchBoxPuzzle"
+title: "Capacitive Touch Box Puzzle"
 ---
 
 This is one of my projects which encorporates an Arduino microprocessor with the wooden puzzle theme.

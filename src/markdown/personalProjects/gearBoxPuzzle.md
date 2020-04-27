@@ -1,5 +1,6 @@
 ---
 id: "gearBoxPuzzle"
+title: "Gear Box Puzzle"
 ---
 
 This is a puzzle which requires a sequence of tasks to be completed before it can be opened. First a series of mathematical problems are to be solved to find the key to the combination lock.

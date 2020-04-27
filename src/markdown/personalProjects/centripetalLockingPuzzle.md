@@ -1,5 +1,6 @@
 ---
 id: "centripetalLockingPuzzle"
+title: "Centripetal Locking Puzzle"
 ---
 
 Using my 3D printer, I designed a CAD model of this puzzle which requires using rotational motion to open.

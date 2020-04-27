@@ -34,13 +34,16 @@ const GearBoxPuzzle = () => {
       }
       markdownRemark(frontmatter: { id: { eq: "gearBoxPuzzle" } }) {
         html
+        frontmatter {
+          title
+        }
       }
     }
   `)
 
   return (
     <Entry
-      title="Gear Box Puzzle"
+      title={data.markdownRemark.frontmatter.title}
       body={data.markdownRemark.html}
       images={[
         data.open.childImageSharp,

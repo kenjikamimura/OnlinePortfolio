@@ -1,5 +1,6 @@
 ---
 id: "woodenTimeCapsule"
+title: "Wooden Time Capsule"
 ---
 
 This 30 cm diameter wooden sphere was made by first gluing many layers of wood around 5 cm thick together to make one solid block. It was then spun on a wood lath and machined to create the spherical shape.

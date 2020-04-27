@@ -1,5 +1,6 @@
 ---
 id: "personalProjects"
+title: "Personal Projects"
 ---
 
 Outside of work and university life, I enjoy using the knew knowledge I have gained at uni to build things.

@@ -25,13 +25,16 @@ const WoodenTimeCapsule = () => {
       }
       markdownRemark(frontmatter: { id: { eq: "woodenTimeCapsule" } }) {
         html
+        frontmatter {
+          title
+        }
       }
     }
   `)
 
   return (
     <Entry
-      title="Wooden Time Capsule"
+      title={data.markdownRemark.frontmatter.title}
       body={data.markdownRemark.html}
       images={[data.open.childImageSharp, data.closed.childImageSharp]}
     />
