@@ -15,15 +15,17 @@ const navbarIconStyles = "ml-1 mr-3 w-6 h-6"
 
 const Navbar = ({ children }) => (
   <div
-    className="grid grid-rows-1"
+    className="grid grid-rows-1 min-h-screen"
     style={{
       gridTemplateColumns: "280px auto",
-      minHeight: "100vh",
     }}
   >
-    <nav className="border-r border-solid border-gray-400 ">
+    <nav
+      className="fixed border-r border-solid border-gray-400 min-h-screen"
+      style={{ width: "280px" }}
+    >
       <Link className="m-4 flex justify-center items-center" to="/">
-        <img src={logo} alt="Logo" className="w-10 my-2 mr-3 " />
+        <img src={logo} alt="Logo" className="w-10 my-2 mr-3" />
         <div className="text-2xl font-bold uppercase flex flex-col justify-between">
           <span className="-mb-2">Kenji</span>
           <span className="-mt-2">Kamimura</span>
@@ -48,6 +50,7 @@ const Navbar = ({ children }) => (
         </NavbarItem>
       </ul>
     </nav>
+    <div />
     <div>
       <main>{children}</main>
     </div>
